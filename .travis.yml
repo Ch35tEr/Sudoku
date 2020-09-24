@@ -11,5 +11,5 @@ cache:
     - $HOME/.gradle
 
 script:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn clean install 
   - bash <(curl -s https://codecov.io/bash)
