@@ -26,8 +26,16 @@ class Board {
 	/*
 	 * Function to set 2D board
 	 */
-	public Board(ArrayList<ArrayList<Integer>> board) {
+	public void setBoard(ArrayList<ArrayList<Integer>> board) {
 		this.board = board;
+	}
+
+	public ArrayList<ArrayList<Integer>> getBoard() {
+		return board;
+	}
+
+	public ArrayList<ArrayList<Integer>> getUnchanged() {
+		return unchanged;
 	}
 
 	/*
@@ -142,7 +150,7 @@ class Board {
 	 * Function to all possible numbers that can exist in the
 	 * block at x and y
 	 */
-	public ArrayList<Integer> hp_find_poss(int x, int y) {
+	private ArrayList<Integer> hp_find_poss(int x, int y) {
 		int count;
 		int loop = 0;
 		ArrayList<Integer> poss = new ArrayList<Integer>(Collections.nCopies(9, 0));
