@@ -2,9 +2,9 @@ import java.util.*;
 
 class Board {
 	private ArrayList<ArrayList<int>> board;
-	private ArrayList<ArrayLiat<>> unchanged;
-	private height = 9;
-	private width = 9;
+	//private ArrayList<ArrayLiat<>> unchanged;
+	private int height = 9;
+	private int width = 9;
 
 	/*
 	 * Function to create 2d matrix of a sudoku board
@@ -86,7 +86,7 @@ class Board {
 	 *
 	 */
 	void close_one() {
-		int x
+		int x;
 		int y;
 		ArrayList<int> poss;
 
@@ -186,9 +186,9 @@ class Board {
 		int i = (y / 3) * 3;
 		int maxj = j + 3;
 		int maxi = i + 3;
-		for (j; j < maxj; j++) {
+		for (; j < maxj; j++) {
 			i = (y / 3) * 3; 
-			for (i; i < maxi; i++)
+			for (; i < maxi; i++)
 				if (board.get(j).get(i) == num)
 					return true;
 		}
@@ -210,7 +210,7 @@ class Board {
 	 *	else it will add c to imposs
 	 */
 	private Boolean hp_repeating_poss(ArrayList<int> imposs, int c) {
-		for (int i = 0; i < 9 && imposs.get(i) != 0)
+		for (int i = 0; i < 9 && imposs.get(i) != 0; i++)
 			if (imposs.get(i) == c)
 				return true;
 		imposs.set(i, c);
