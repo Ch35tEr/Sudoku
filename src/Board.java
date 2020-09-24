@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Board {
-	private ArrayList<ArrayList<int>> board;
-	private ArrayList<ArrayList<>> unchanged;
+	private ArrayList<ArrayList<Integer>> board;
+	//private ArrayList<ArrayLiat<>> unchanged;
 	private int height = 9;
 	private int width = 9;
 
@@ -12,7 +12,7 @@ class Board {
 	 */
 	public Board(String board) {
 		String [] lines = board.split('\n');
-		board = new ArrayList<ArrayList<int>>();
+		board = new ArrayList<ArrayList<Integer>>();
 		for (String line : lines) {
 			String [] numbers = line.split(" ");
 			board.add(this.parseInt(numbers));
@@ -22,7 +22,7 @@ class Board {
 	/*
 	 * Function to set 2D board
 	 */
-	public Board(ArrayList<ArrayList<int>> board) {
+	public Board(ArrayList<ArrayList<Integer>> board) {
 		this.board = board;
 	}
 
@@ -31,15 +31,15 @@ class Board {
 	 * Input Example	: {"0", "1", "2"}
 	 * Output		: {0, 1, 2}
 	 */
-	public Array<int> parseInt(String [] numbers) {
-		ArrayList<int> output = new ArrayList<int>();
+	public Array<Integer> parseInt(String [] numbers) {
+		ArrayList<Integer> output = new ArrayList<Integer>();
 		for (String num : numbers)
 			output.add(Integer.parseInt(num));
 		return output;
 	}
 
 	public void print() {
-		for (Array<int> line : board) {
+		for (Array<Integer> line : board) {
 			for (int x : line)
 				System.out.print(x + " ");
 			System.out.println();
@@ -58,8 +58,8 @@ class Board {
 		int y;
 		int i;
 
-		ArrayList<int> poss;
-		// = new ArrayList<int>(Collections.nCopies(9, 0));
+		ArrayList<Integer> poss;
+		// = new ArrayList<Integer>(Collections.nCopies(9, 0));
 		x = (index / 9);
 		y = (index % 9);
 
@@ -86,8 +86,7 @@ class Board {
 	 *
 	 */
 	void close_one() {
-		ArrayList<int> poss;
-
+		ArrayList<Integer> poss;
 		for (int c = 1; c == 1;) {
 			c = 0;
 			for (int x = 0; x < height; x++) {
@@ -130,10 +129,10 @@ class Board {
 	 * Function to all possible numbers that can exist in the
 	 * block at x and y
 	 */
-	public ArrayList<int> hp_find_poss(int x, int y) {
+	public ArrayList<Integer> hp_find_poss(int x, int y) {
 		int count;
 		int loop = 0;
-		ArrayList<int> poss = new ArrayList<int>(Collections.nCopies(9, 0));
+		ArrayList<Integer> poss = new ArrayList<Integer>(Collections.nCopies(9, 0));
 		for (int i = 1; i <= 9; i++)
 			if (!hp_is_there(x, y, i))
 				poss.set(loop++, i);
@@ -207,7 +206,7 @@ class Board {
 	 *	if it is, returns true
 	 *	else it will add c to imposs
 	 */
-	private Boolean hp_repeating_poss(ArrayList<int> imposs, int c) {
+	private Boolean hp_repeating_poss(ArrayList<Integer> imposs, int c) {
 		for (int i = 0; i < 9 && imposs.get(i) != 0; i++)
 			if (imposs.get(i) == c)
 				return true;
