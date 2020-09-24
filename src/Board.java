@@ -2,7 +2,7 @@ import java.util.*;
 
 class Board {
 	private ArrayList<ArrayList<Integer>> board;
-	//private ArrayList<ArrayLiat<>> unchanged;
+	private ArrayList<ArrayList<Integer>> unchanged;
 	private int height = 9;
 	private int width = 9;
 
@@ -11,12 +11,16 @@ class Board {
 	 *
 	 */
 	public Board(String board) {
-		String [] lines = board.split('\n');
-		board = new ArrayList<ArrayList<Integer>>();
+		String [] lines = board.split("\n");
+		this.board = new ArrayList<ArrayList<Integer>>();
 		for (String line : lines) {
 			String [] numbers = line.split(" ");
-			board.add(this.parseInt(numbers));
-		}	
+			this.board.add(this.parseInt(numbers));
+		}
+		for (int i = 0; i < 9; i++) {
+			ArrayList<Integer> row = new ArrayList<Integer>(Collections.nCopies(9, 0));
+			unchanged.add(row);
+		}
 	}
 
 	/*
@@ -31,7 +35,7 @@ class Board {
 	 * Input Example	: {"0", "1", "2"}
 	 * Output		: {0, 1, 2}
 	 */
-	public Array<Integer> parseInt(String [] numbers) {
+	public ArrayList<Integer> parseInt(String [] numbers) {
 		ArrayList<Integer> output = new ArrayList<Integer>();
 		for (String num : numbers)
 			output.add(Integer.parseInt(num));
@@ -39,7 +43,16 @@ class Board {
 	}
 
 	public void print() {
-		for (Array<Integer> line : board) {
+		for (ArrayList<Integer> line : board) {
+			for (int x : line)
+				System.out.print(x + " ");
+			System.out.println();
+		}
+	}
+
+
+	public void printUnchanged() {
+		for (ArrayList<Integer> line : unchanged) {
 			for (int x : line)
 				System.out.print(x + " ");
 			System.out.println();
@@ -64,7 +77,7 @@ class Board {
 		y = (index % 9);
 
 		if (!hp_changeable(x, y)) {
-			if (solve(index + 1))
+			if (solveBoard(index + 1))
 				return true;
 			else
 				return false;
@@ -72,7 +85,7 @@ class Board {
 			poss = hp_find_poss(x, y);
 			for (i = 0; poss.get(i) != 0 && i < 9; i++) {
 				board.get(x).set(y, poss.get(i));
-				if (solve(index + 1))
+				if (solveBoard(index + 1))
 					return true;
 				else
 					board.get(x).set(y, 0);
@@ -168,7 +181,7 @@ class Board {
 	/*
 	 * Function to check if num is repeating along x
 	 */
-	private Boolean hp_check_x(int x, int num) {
+	private Boolean hp_check_y(int x, int num) {
 		for (int i = 0; i < 9; i++)
 			if (board.get(x).get(i) == num)
 				return true;
@@ -196,7 +209,7 @@ class Board {
 	 * Function that chceks if we change modify contents at x and y
 	 */
 	private Boolean hp_changeable(int x, int y) {
-		if (unchanged.get(x).get(y) == false)
+		if (unchanged.get(x).get(y) == 0)
 			return true;
 		return false;
 	}
@@ -207,7 +220,8 @@ class Board {
 	 *	else it will add c to imposs
 	 */
 	private Boolean hp_repeating_poss(ArrayList<Integer> imposs, int c) {
-		for (int i = 0; i < 9 && imposs.get(i) != 0; i++)
+		int i;
+		for (i = 0; i < 9 && imposs.get(i) != 0; i++)
 			if (imposs.get(i) == c)
 				return true;
 		imposs.set(i, c);
