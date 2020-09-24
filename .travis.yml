@@ -4,7 +4,6 @@ jdk: oraclejdk11
 sudo: false
 
 install: true
-script: ./mvnw clean install
 
 cache:
   directories:
