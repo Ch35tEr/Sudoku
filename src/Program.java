@@ -54,6 +54,23 @@ public class Program {
 
 		hardB.print();
 		System.out.println();
+
+		String assign = 
+		"0 0 8 7 0 6 2 0 0\n"+
+		"0 0 7 0 1 0 3 0 0\n"+
+		"0 0 0 4 0 0 0 0 0\n"+
+		"3 0 0 0 0 0 6 0 9\n"+
+		"0 6 0 0 7 0 0 5 0\n"+
+		"1 0 5 0 0 0 0 0 2\n"+
+		"0 0 0 0 0 7 0 0 0\n"+
+		"0 0 1 0 6 0 8 0 0\n"+
+		"0 0 4 2 0 5 7 0 0\n";
+		Board assignB = new Board(assign);		
+		System.out.println();
+		assignB.solve();
+
+		assignB.print();
+		System.out.println();
 	}
 
 }
