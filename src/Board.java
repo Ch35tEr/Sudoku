@@ -17,10 +17,11 @@ class Board {
 			String [] numbers = line.split(" ");
 			this.board.add(this.parseInt(numbers));
 		}
-		for (int i = 0; i < 9; i++) {
+		unchanged = new ArrayList<ArrayList<Integer>>(this.board);
+		/*for (int i = 0; i < 9; i++) {
 			ArrayList<Integer> row = new ArrayList<Integer>(Collections.nCopies(9, 0));
 			unchanged.add(row);
-		}
+		}*/
 	}
 
 	/*
@@ -69,11 +70,12 @@ class Board {
 
 	public void solve() {
 		close_one();
+		printUnchanged();
 		solveBoard(0);
 	} 
 
 	private Boolean solveBoard(int index) {
-		if (index >= 90)
+		if (index >= 81)
 			return true;
 		int x;
 		int y;
@@ -83,7 +85,7 @@ class Board {
 		// = new ArrayList<Integer>(Collections.nCopies(9, 0));
 		x = (index / 9);
 		y = (index % 9);
-
+		
 		if (!hp_changeable(x, y)) {
 			if (solveBoard(index + 1))
 				return true;
@@ -92,6 +94,7 @@ class Board {
 		} else {
 			poss = hp_find_poss(x, y);
 			for (i = 0; poss.get(i) != 0 && i < 9; i++) {
+				System.out.println(index +" check 2.1");
 				board.get(x).set(y, poss.get(i));
 				if (solveBoard(index + 1))
 					return true;
