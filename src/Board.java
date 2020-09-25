@@ -70,7 +70,6 @@ class Board {
 
 	public void solve() {
 		close_one();
-		printUnchanged();
 		solveBoard(0);
 	} 
 
@@ -94,7 +93,6 @@ class Board {
 		} else {
 			poss = hp_find_poss(x, y);
 			for (i = 0; poss.get(i) != 0 && i < 9; i++) {
-				System.out.println(index +" check 2.1");
 				board.get(x).set(y, poss.get(i));
 				if (solveBoard(index + 1))
 					return true;
