@@ -1,9 +1,9 @@
-
+import java.util.*;
 
 public class Program {
 
 	public static void main(String [] argv) {
-	
+		/*
 		System.out.println("********************************************************************************************");
 		System.out.println("*********************************		EASY BOARD		*********************************");
 		System.out.println("********************************************************************************************");
@@ -103,7 +103,16 @@ public class Program {
 
 		System.out.println("********************************************************************************************");
 		System.out.println("********************************************************************************************");
-		System.out.println("********************************************************************************************");
+		System.out.println("********************************************************************************************");*/
+
+		Scanner in = new Scanner(System.in);
+		String input = "";
+		for (int i = 0; i < 9; i++)
+			input = input + in.nextLine()+"\n";
+		System.out.println(input);
+		Board assign = new Board(input);
+		assign.solve();
+		assign.print();
 	}
 
 }
