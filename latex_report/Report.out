@@ -1,0 +1,22 @@
+\BOOKMARK [1][-]{section.0.1}{Aim}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Summary of theory}{}% 2
+\BOOKMARK [2][-]{subsection.0.2.1}{sudoku}{section.0.2}% 3
+\BOOKMARK [2][-]{subsection.0.2.2}{Backtracking algorithm}{section.0.2}% 4
+\BOOKMARK [2][-]{subsection.0.2.3}{Perfomance of backtracking algorithm}{section.0.2}% 5
+\BOOKMARK [1][-]{section.0.3}{Experimental Methodology}{}% 6
+\BOOKMARK [1][-]{section.0.4}{Results}{}% 7
+\BOOKMARK [2][-]{subsection.0.4.1}{Some sample inputs with their solve-times}{section.0.4}% 8
+\BOOKMARK [1][-]{section.0.5}{Interpretation of results}{}% 9
+\BOOKMARK [1][-]{section.0.6}{Relating the results to the theory}{}% 10
+\BOOKMARK [1][-]{section.0.7}{conclusion}{}% 11
+\BOOKMARK [1][-]{section.0.8}{Sample inputs}{}% 12
+\BOOKMARK [2][-]{subsection.0.8.1}{easy 0}{section.0.8}% 13
+\BOOKMARK [2][-]{subsection.0.8.2}{easy 1}{section.0.8}% 14
+\BOOKMARK [2][-]{subsection.0.8.3}{medium 0}{section.0.8}% 15
+\BOOKMARK [2][-]{subsection.0.8.4}{medium 1}{section.0.8}% 16
+\BOOKMARK [2][-]{subsection.0.8.5}{hard 0}{section.0.8}% 17
+\BOOKMARK [2][-]{subsection.0.8.6}{hard 1}{section.0.8}% 18
+\BOOKMARK [2][-]{subsection.0.8.7}{very hard 0}{section.0.8}% 19
+\BOOKMARK [2][-]{subsection.0.8.8}{very hard 1}{section.0.8}% 20
+\BOOKMARK [2][-]{subsection.0.8.9}{missing 1 value}{section.0.8}% 21
+\BOOKMARK [1][-]{section.0.9}{References}{}% 22
